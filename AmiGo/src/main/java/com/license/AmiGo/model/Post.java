@@ -1,5 +1,6 @@
 package com.license.AmiGo.model;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -8,12 +9,15 @@ import java.util.Vector;
 
 @Node
 public class Post {
-    @Id@GeneratedValue
+    @Id@GeneratedValue@NotNull
     private long post_id;
+    @NotNull
     private long account_id;
+    @NotNull
     private Long group_id;
     private String urlImgPost;
     private String contentPost;
+    @NotNull
     private String post_date_created;
 
     public Post() {

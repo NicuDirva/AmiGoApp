@@ -12,8 +12,4 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AccountRepository extends Neo4jRepository<Account, Long> {
-    @Query("MATCH (a:Account)\n" +
-            "WHERE id(a) = $account_id\n" +
-            "DETACH DELETE a")
-    void deleteAccountById(@Param("account_id") long account_id);
 }

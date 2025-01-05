@@ -21,7 +21,7 @@ public class AccountServiceImpl implements AccountService {
     public List<Account> getAllAccount() {
         return accountRepository.findAll();
     }
-    public void deleteAccountById(long account_id) {
-        accountRepository.deleteAccountById(account_id);
+    public void deleteAll() {
+        accountRepository.deleteAll();
     }
 }

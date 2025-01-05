@@ -1,5 +1,6 @@
 package com.license.AmiGo.model;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -9,11 +10,15 @@ import java.util.Vector;
 @Node
 public class Post_comment {
 
-    @Id@GeneratedValue
+    @Id@GeneratedValue@NotNull
     private long comment_id;
+    @NotNull
     private long account_id;
+    @NotNull
     private long post_id;
+    @NotNull
     private String content;
+    @NotNull
     private String created_date;
     private Vector<Post_comment> commentArray;
 

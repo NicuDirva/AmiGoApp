@@ -1,16 +1,21 @@
 package com.license.AmiGo.model;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
 @Node
 public class Message {
-    @Id@GeneratedValue
+    @Id@GeneratedValue@NotNull
     private long message_id;
+    @NotNull
     private long sender_id;
+    @NotNull
     private long receiver_id;
+    @NotNull
     private String content;
+    @NotNull
     private String timeSent;
 
     public Message(long message_id, long sender_id, long receiver_id, String content, String timeSent) {

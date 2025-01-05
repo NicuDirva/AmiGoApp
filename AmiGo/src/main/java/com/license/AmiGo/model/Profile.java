@@ -1,21 +1,24 @@
 package com.license.AmiGo.model;
 
 import com.license.AmiGo.enums.Gender;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
 @Node
 public class Profile {
-
-    @Id @GeneratedValue
+    @Id @GeneratedValue@NotNull
     private long profile_id;
+    @NotNull
     private long account_id;
     private String img_url;
     private String description;
+    @NotNull
     private Gender gender;
+    @NotNull
     private String dob;
-
+    @NotNull
     private String access;
     private String location;
 

@@ -1,5 +1,6 @@
 package com.license.AmiGo.model;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -8,11 +9,15 @@ import java.util.Vector;
 
 @Node
 public class Group {
-    @Id@GeneratedValue
+    @Id@GeneratedValue@NotNull
     private long group_id;
+    @NotNull
     private long creator_id;
+    @NotNull
     private String name;
+    @NotNull
     private String access;
+    @NotNull
     private String urlImg;
 
     public Group(long creator_id, String name, String access, String urlImg) {
